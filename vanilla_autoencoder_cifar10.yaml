@@ -1,0 +1,23 @@
+trainer:
+  logger:
+   class_path: lightning.pytorch.loggers.wandb.WandbLogger
+   init_args:
+     resume: allow
+     name: "autoencoder"
+     project: "deep_image_compression"
+  devices: 1
+  num_nodes: 1
+  max_steps: 100000
+  val_check_interval: 1000
+  check_val_every_n_epoch: null
+model:
+  class_path: training.generic_training.GenericTraining
+  init_args:
+    network:
+      class_path: models.autoencoder.AutoEncoder
+data:
+  class_path: datasets.cifar10.CIFAR10DataModule
+  init_args:
+    batch_size: 128
+    num_workers: 4
+    img_size: 32
