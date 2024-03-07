@@ -11,3 +11,5 @@
 
 ## Running trainings:
 0. ```python main.py {fit,validate,test,predict} -c config.yaml --root /path/to/folder/with/datasets```
+
+python main.py fit -c vanilla_autoencoder_cifar10.yaml --root C:/Users/20202182/Documents/GitHub/deep_image_compression_BEP
